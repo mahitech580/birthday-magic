@@ -1,0 +1,60 @@
+﻿"use client"
+
+import { useEffect, useState, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+
+export default function SparkleTrail() {
+  const [sparkles, setSparkles] = useState([])
+  const idRef = useRef(0)
+  const lastRef = useRef(0)
+
+  useEffect(() => {
+    const handleMove = (e) => {
+      const now = Date.now()
+      if (now - lastRef.current < 60) return
+      lastRef.current = now
+
+      idRef.current += 1
+      const id = idRef.current
+
+      const newSparkle = {
+        id,
+        x: e.clientX,
+        y: e.clientY,
+        size: 6 + Math.random() * 8,
+      }
+
+      setSparkles((prev) => [...prev, newSparkle])
+
+      setTimeout(() => {
+        setSparkles((prev) => prev.filter((s) => s.id !== id))
+      }, 700)
+    }
+
+    window.addEventListener("mousemove", handleMove)
+    return () => window.removeEventListener("mousemove", handleMove)
+  }, [])
+
+  return (
+    <div className="pointer-events-none fixed inset-0 z-[60]">
+      <AnimatePresence>
+        {sparkles.map((s) => (
+          <motion.div
+            key={s.id}
+            className="absolute rounded-full bg-pink-300"
+            style={{
+              left: s.x,
+              top: s.y,
+              width: s.size,
+              height: s.size,
+            }}
+            initial={{ opacity: 0.9, scale: 0 }}
+            animate={{ opacity: 0, scale: 1.4, y: -20 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  )
+}
