@@ -253,7 +253,7 @@ export default function Home() {
 
         <audio
           ref={audioRef}
-          src="/birthday.mp3"
+          src="/birthday-special/birthday.mp3"
           preload="auto"
           loop
         />
@@ -262,6 +262,7 @@ export default function Home() {
     </main>
   )
 }
+
 
 
 

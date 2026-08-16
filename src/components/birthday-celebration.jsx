@@ -332,7 +332,7 @@ export default function BirthdayCelebration() {
               <div className="relative overflow-hidden rounded-[2rem] border-4 border-white bg-white shadow-2xl shadow-pink-200/60">
 
                 <img
-                  src="/ammu-mahi.png"
+                  src="/birthday-special/ammu-mahi.png"
                   alt="Ammu and Mahi"
                   className="celebration-photo block h-auto w-full object-cover"
                 />
@@ -643,6 +643,7 @@ export default function BirthdayCelebration() {
     </div>
   )
 }
+
 
 
 
