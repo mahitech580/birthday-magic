@@ -4,19 +4,51 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Heart, Sparkles } from "lucide-react"
 
-export default function Countdown({ onCountdownEnd }) {
+export default function Countdown({ targetDate, onCountdownEnd }) {
 
-  const [time] = useState({
-    total: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  })
+  const calculateTime = () => {
+
+    const difference = targetDate.getTime() - Date.now()
+
+    if (difference <= 0) {
+      return {
+        total: 0,
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      }
+    }
+
+    return {
+      total: difference,
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    }
+  }
+
+  const [time, setTime] = useState(calculateTime())
 
   useEffect(() => {
-    onCountdownEnd?.()
-  }, [onCountdownEnd])
+
+    const timer = setInterval(() => {
+
+      const newTime = calculateTime()
+
+      setTime(newTime)
+
+      if (newTime.total <= 0) {
+        clearInterval(timer)
+        onCountdownEnd?.()
+      }
+
+    }, 1000)
+
+    return () => clearInterval(timer)
+
+  }, [targetDate, onCountdownEnd])
 
   const boxes = [
     ["Days", time.days],
@@ -89,7 +121,7 @@ export default function Countdown({ onCountdownEnd }) {
               }}
               className="text-3xl font-bold text-pink-500 md:text-4xl"
             >
-              00
+              {String(value).padStart(2, "0")}
             </motion.div>
 
             <p className="mt-2 text-sm font-medium text-gray-500">

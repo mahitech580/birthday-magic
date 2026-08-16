@@ -1,0 +1,68 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Italiana&family=Josefin+Sans:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Nunito+Sans:wght@300;400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+.font-dreamy {
+  font-family: "Great Vibes", cursive;
+}
+
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
+
+.font-cute {
+  font-family: "Pacifico", cursive;
+}
+
+.font-quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
+.font-classic {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+.font-cormorant {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.font-soft {
+  font-family: "Italiana", serif;
+}
+
+.font-josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.font-note {
+  font-family: "Dancing Script", cursive;
+}
+
+.font-nunito {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h1, h2, h1 span, h2 span {
+  font-family: 'Great Vibes', cursive;
+}
+
+p, span, button {
+  font-family: 'Lato', sans-serif;
+}
+
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+button {
+  background-size: 200% auto;
+  transition: box-shadow 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+  animation: shimmer 1.5s linear infinite;
+}

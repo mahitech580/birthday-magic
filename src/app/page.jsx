@@ -22,7 +22,7 @@ export default function Home() {
 
   const audioRef = useRef(null)
 
-  const birthdayDate = new Date("2026-08-20T00:00:00+05:30")
+  const birthdayDate = new Date(Date.now() + 10000)
 
   useEffect(() => {
     const generated = Array.from({ length: 26 }).map((_, i) => ({
@@ -262,5 +262,7 @@ export default function Home() {
     </main>
   )
 }
+
+
 
 
