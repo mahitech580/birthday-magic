@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -8,34 +8,37 @@ export default function FloatingHearts() {
   const [hearts, setHearts] = useState([])
 
   useEffect(() => {
-    // Generate floating hearts
     const colors = [
-      "text-pink-500",
       "text-pink-400",
       "text-pink-300",
-      "text-red-400",
+      "text-rose-400",
       "text-purple-400",
-      "text-purple-300",
+      "text-fuchsia-300",
     ]
 
-    const fills = ["fill-pink-200", "fill-pink-100", "fill-red-100", "fill-purple-100"]
+    const fills = [
+      "fill-pink-100",
+      "fill-rose-100",
+      "fill-purple-100",
+      "fill-fuchsia-100",
+    ]
 
-    const newHearts = Array.from({ length: 12 }).map((_, i) => ({
+    const newHearts = Array.from({ length: 16 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: 16 + Math.random() * 24,
+      size: 12 + Math.random() * 16,
       color: colors[Math.floor(Math.random() * colors.length)],
       fill: fills[Math.floor(Math.random() * fills.length)],
-      duration: 10 + Math.random() * 20,
-      delay: Math.random() * 5,
+      duration: 8 + Math.random() * 12,
+      delay: Math.random() * 6,
     }))
 
     setHearts(newHearts)
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10">
+    <div className="fixed inset-0 pointer-events-none z-[5] overflow-hidden">
       {hearts.map((heart) => (
         <motion.div
           key={heart.id}
@@ -45,19 +48,26 @@ export default function FloatingHearts() {
             top: `${heart.y}%`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, 10, -10, 0],
-            scale: [1, 1.1, 1],
-            opacity: [0.7, 1, 0.7],
+            y: [0, -35, 0],
+            x: [0, 12, -12, 0],
+            rotate: [-5, 5, -5],
+            scale: [1, 1.12, 1],
+            opacity: [0.25, 0.65, 0.25],
           }}
           transition={{
             duration: heart.duration,
             delay: heart.delay,
-            repeat: Number.POSITIVE_INFINITY,
+            repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <Heart className={`w-${heart.size} h-${heart.size} ${heart.color} ${heart.fill} opacity-70`} />
+          <Heart
+            style={{
+              width: `${heart.size}px`,
+              height: `${heart.size}px`,
+            }}
+            className={`${heart.color} ${heart.fill}`}
+          />
         </motion.div>
       ))}
     </div>

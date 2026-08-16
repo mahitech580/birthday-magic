@@ -1,135 +1,266 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+
 import Countdown from "@/components/countdown"
 import BirthdayCelebration from "@/components/birthday-celebration"
+import SurprisePopup from "@/components/SurprisePopup"
 import Confetti from "@/components/confetti"
 import FloatingHearts from "@/components/floating-hearts"
-import Loader from "@/components/Loader"
+import HeartBurst from "@/components/HeartBurst"
+import SparkleTrail from "@/components/SparkleTrail"
+
 import { MoveRight, PartyPopper } from "lucide-react"
 
 export default function Home() {
+  const [showSurprise, setShowSurprise] = useState(true)
   const [isBirthday, setIsBirthday] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [bubbles, setBubbles] = useState([])
   const [showForYouBtn, setShowForYouBtn] = useState(false)
-  const birthdayDate = new Date("April 28, 2025") // Change this date accordingly
+  const [showBurst, setShowBurst] = useState(false)
+  const [bubbles, setBubbles] = useState([])
+
   const audioRef = useRef(null)
 
-  // For testing
-  // const birthdayDate = new Date("2025-04-23T22:03:00+05:30")
+  const birthdayDate = new Date("2026-08-20T00:00:00+05:30")
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500);
+    const generated = Array.from({ length: 26 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      size: 10 + Math.random() * 35,
+      duration: 5 + Math.random() * 7,
+      delay: Math.random() * 6,
+      opacity: 0.08 + Math.random() * 0.16,
+      color: [
+        "rgba(244,114,182,0.30)",
+        "rgba(192,132,252,0.30)",
+        "rgba(251,113,133,0.25)",
+        "rgba(217,70,239,0.22)",
+        "rgba(255,255,255,0.45)",
+      ][Math.floor(Math.random() * 5)],
+    }))
+
+    setBubbles(generated)
   }, [])
 
-  const startCelebration = () => {
-    setShowForYouBtn(false)
-    setIsBirthday(true)
-    // Play the song
+  const openSurprise = () => {
+    setShowSurprise(false)
+
     if (audioRef.current) {
-      audioRef.current.volume = 0.8;
-      audioRef.current.play().catch((e) => {
-        console.log("Autoplay prevented, user interaction needed", e)
+      audioRef.current.volume = 0.8
+      audioRef.current.currentTime = 0
+
+      audioRef.current.play().catch((error) => {
+        console.log("Music error:", error)
       })
     }
   }
 
-  useEffect(() => {
-    const generated = Array.from({ length: 20 }).map(() => ({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      color: ["bg-pink-300", "bg-purple-300", "bg-yellow-300", "bg-violet-300", "bg-rose-300"][Math.floor(Math.random() * 3)],
-      size: 16 + Math.floor(Math.random() * 8),
-      duration: 3 + Math.random() * 2,
-      delay: Math.random() * 5
-    }))
-    setBubbles(generated)
-  }, [])
+  const startCelebration = () => {
+    setShowForYouBtn(false)
+    setIsBirthday(true)
+    setShowBurst(true)
 
-  if (isLoading) {
-    return (
-      <Loader />
-    )
+    setTimeout(() => {
+      setShowBurst(false)
+    }, 100)
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-rose-100 to-purple-100 flex flex-col items-center justify-center p-4 overflow-hidden">
-      {isBirthday && <Confetti />}
-      <FloatingHearts />
+    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-rose-50 via-pink-50 to-purple-100">
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 w-full max-w-3xl mx-auto"
-      >
-        <motion.div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl shadow-xl shadow-rose-100 p-8 border-2 border-rose-200"
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}>
-          <AnimatePresence mode="wait">
-            {isBirthday ? (
-              <BirthdayCelebration key="celebration" />
-            ) : (
-              <Countdown key="countdown" targetDate={birthdayDate} onCountdownEnd={() => setShowForYouBtn(true)} />
-            )}
-          </AnimatePresence>
-        </motion.div>
-      </motion.div>
+      {/* SOFT BACKGROUND LIGHT */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
 
-      {showForYouBtn && <motion.div
-        key="start-button"
-        className="flex flex-col items-center justify-center mt-8"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0 }}
-      >
-        <motion.button
-          onClick={startCelebration}
-          className="bg-gradient-to-r z-10 from-pink-500 to-purple-500 shadow-lg hover:shadow-xl transition-all rounded-full font-medium text-white py-4 px-8 cursor-pointer border-2 border-white flex items-center gap-3"
-          whileTap={{ scale: 0.95 }}
+        <motion.div
+          className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-pink-300/20 blur-3xl"
           animate={{
-            y: [0, -5, 0],
-            scale: [1, 1.03, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.15, 1],
           }}
           transition={{
-            duration: 2,
-            repeat: Number.POSITIVE_INFINITY,
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
-        >
-          <PartyPopper className="w-6 h-6" />
-          <span className="text-xl">For you</span>
-          <MoveRight className="w-5 stroke-3 h-6" />
-        </motion.button>
-      </motion.div>}
+        />
 
-      {/* You can change the background song if you want */}
-      <audio ref={audioRef} src="/birthday.mp3" preload="auto" loop />
+        <motion.div
+          className="absolute -right-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-purple-300/20 blur-3xl"
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 40, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
 
-      {/* Decorative elements */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        {bubbles.map((bubble, i) => (
+        <motion.div
+          className="absolute bottom-[-150px] left-1/3 h-96 w-96 rounded-full bg-rose-300/15 blur-3xl"
+          animate={{
+            x: [0, 30, 0],
+            scale: [1, 1.12, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* FLOATING BUBBLES */}
+        {bubbles.map((bubble) => (
           <motion.div
-            key={i}
-            className="absolute"
-            style={{ left: bubble.left, top: bubble.top }}
-            animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
+            key={bubble.id}
+            className="absolute rounded-full"
+            style={{
+              left: bubble.left,
+              top: bubble.top,
+              width: `${bubble.size}px`,
+              height: `${bubble.size}px`,
+              background: bubble.color,
+              opacity: bubble.opacity,
+              filter: "blur(1px)",
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, 15, -15, 0],
+              scale: [1, 1.12, 1],
+            }}
             transition={{
               duration: bubble.duration,
-              repeat: Infinity,
               delay: bubble.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
-          >
-            <div
-              className={`rounded-full ${bubble.color} opacity-60`}
-              style={{ width: `${bubble.size}px`, height: `${bubble.size}px` }}
-            />
-          </motion.div>
+          />
         ))}
+
+        {/* SUBTLE VIGNETTE */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(124,58,237,0.06)_100%)]" />
+
+      </div>
+
+      <FloatingHearts />
+      <SparkleTrail />
+      <HeartBurst trigger={showBurst} />
+
+      {isBirthday && <Confetti />}
+
+      <div className="relative z-20 flex min-h-screen flex-col items-center justify-center px-4 py-8 sm:px-6">
+
+        {showSurprise ? (
+          <SurprisePopup onOpen={openSurprise} />
+        ) : (
+          <>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 25,
+                scale: 0.96,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              className="w-full max-w-3xl"
+            >
+              <motion.div
+                className=" birthday-main-card rounded-[2rem] p-5 sm:p-8 md:p-10"
+                initial={{
+                  scale: 0.95,
+                }}
+                animate={{
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.6,
+                }}
+              >
+                <AnimatePresence mode="wait">
+                  {isBirthday ? (
+                    <BirthdayCelebration key="celebration" />
+                  ) : (
+                    <Countdown
+                      key="countdown"
+                      targetDate={birthdayDate}
+                      onCountdownEnd={() => setShowForYouBtn(true)}
+                    />
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </motion.div>
+
+            <AnimatePresence>
+              {showForYouBtn && (
+                <motion.div
+                  className="mt-8 flex flex-col items-center justify-center sm:mt-10"
+                  initial={{
+                    opacity: 0,
+                    y: 25,
+                    scale: 0.9,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: -20,
+                  }}
+                >
+                  <motion.button
+                    onClick={startCelebration}
+                    className="for-you-button flex items-center gap-3 rounded-full border-2 border-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 px-8 py-4 text-white shadow-xl sm:px-10 sm:py-5"
+                    whileTap={{
+                      scale: 0.94,
+                    }}
+                    animate={{
+                      y: [0, -5, 0],
+                    }}
+                    transition={{
+                      duration: 2.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <PartyPopper className="h-6 w-6" />
+
+                    <span className="text-xl font-dreamy sm:text-2xl">
+                      For you
+                    </span>
+
+                    <MoveRight className="h-6 w-6" />
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </>
+        )}
+
+        <audio
+          ref={audioRef}
+          src="/birthday.mp3"
+          preload="auto"
+          loop
+        />
+
       </div>
     </main>
   )
 }
+
+
