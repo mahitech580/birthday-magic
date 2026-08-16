@@ -1,21 +1,21 @@
-# 🎂 Birthday Surprise Website 💖
+﻿# 🎂 Birthday Surprise Website 💖
 
 A personal interactive birthday website created by **Mahendra** as a special digital surprise for someone very special.
 
 🌐 **Live Website:**  
-https://mahitech580.github.io/birthday-site/
+https://mahitech580.github.io/birthday-special/
 
 ---
 
 ## 💝 About The Project
 
-Sometimes a simple **"Happy Birthday"** isn't enough.
+Sometimes a simple **“Happy Birthday”** isn’t enough.
 
 So instead of sending an ordinary birthday message, I built an entire interactive experience using code.
 
 The idea was simple:
 
-> **If I can't be there physically, I'll make something special that can be opened anywhere.** ❤️
+> **If I can’t be there physically, I’ll make something special that can be opened anywhere.** ❤️
 
 This website combines animations, music, messages, photos, and interactive elements into one personalized birthday experience.
 
@@ -82,3 +82,8 @@ The experience ends with a final birthday message and celebration.
 
 ---
 
+## ❤️ Created By
+
+**Mahendra**
+
+A small project made with code, creativity, and a lot of heart. 💗
