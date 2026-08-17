@@ -88,20 +88,20 @@ export default function SurprisePopup({ onOpen }) {
             repeat: Infinity,
           }}
         >
-          Ammu ❤️
+          A Special Surprise ❤️
         </motion.h1>
 
         <div className="mx-auto mt-3 h-px w-20 bg-gradient-to-r from-transparent via-pink-300 to-transparent" />
 
         <p className="font-lato mx-auto mt-6 max-w-xs text-base leading-7 text-gray-500 sm:text-lg">
-          I made something especially for you.
+          A little surprise has been created just for you.
           <br />
           Something I hope brings a little smile to your face. ✨
         </p>
 
         <motion.button
           onClick={onOpen}
-          aria-label="Open Ammu's birthday surprise"
+          aria-label="Open birthday surprise"
           className="mx-auto mt-8 flex h-24 w-24 cursor-pointer items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-pink-400 via-fuchsia-500 to-purple-600 text-white shadow-2xl shadow-pink-300/50 sm:h-28 sm:w-28"
           animate={{
             scale: [1, 1.08, 1],
@@ -142,3 +142,5 @@ export default function SurprisePopup({ onOpen }) {
     </motion.div>
   )
 }
+
+

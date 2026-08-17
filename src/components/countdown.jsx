@@ -87,7 +87,7 @@ export default function Countdown({ targetDate, onCountdownEnd }) {
       </div>
 
       <h1 className="mt-4 bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-3xl font-bold text-transparent md:text-5xl font-dreamy">
-        Ammu's Birthday ❤️
+        Birthday Celebration ✨
       </h1>
 
       <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-600">
@@ -135,9 +135,11 @@ export default function Countdown({ targetDate, onCountdownEnd }) {
       </div>
 
       <p className="mt-8 text-sm text-gray-400">
-        August 20, 2026 • A day for Ammu ❤️
+        A special day • A moment to celebrate ❤️
       </p>
 
     </div>
   )
 }
+
+

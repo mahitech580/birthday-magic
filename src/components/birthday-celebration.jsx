@@ -138,23 +138,23 @@ export default function BirthdayCelebration() {
 
             <h1 className="celebration-title mt-3 px-2 text-4xl font-black leading-tight sm:text-5xl md:text-6xl font-dreamy">
               <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-transparent">
-                Happy Birthday,
+                Happy Birthday! 🎂❤️
               </span>
               <br />
               <span className="text-gray-800">
-                Ammu! 🎉
+                Happy Birthday! 🎂❤️
               </span>
             </h1>
 
             <p className="mt-5 max-w-md text-base leading-7 text-gray-500 sm:text-lg">
-              August 20, 2026
+              Your Special Day ✨
               <br />
-              A beautiful day for a beautiful person. 💗
+              A beautiful celebration for someone special. 💗
             </p>
 
             <div className="mt-7 flex items-center gap-4 text-2xl sm:gap-5 sm:text-3xl">
               <motion.span animate={{ y: [0, -6, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
-                🩺
+                
               </motion.span>
 
               <motion.span animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>
@@ -228,7 +228,7 @@ export default function BirthdayCelebration() {
             </p>
 
             <h2 className="mt-2 text-3xl font-bold text-gray-800 sm:text-4xl font-dreamy">
-              Dear Ammu ❤️
+              To Someone Special ❤️
             </h2>
 
             <motion.div
@@ -248,26 +248,26 @@ export default function BirthdayCelebration() {
 
               <TypewriterText
                 className="text-base leading-8 text-gray-600 sm:text-lg"
-                text="Today is your special day, and I wanted to make it a little more memorable than just another birthday wish."
+                text="Today is your special day! Let this little corner of the internet make it even more memorable. ✨"
                 speed={22}
               />
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
-                So I made this tiny corner of the internet especially for you — with a little bit of code, a lot of thought, and plenty of birthday vibes. ✨
+                A little corner of the internet filled with wishes, memories, smiles, and plenty of birthday vibes. ✨
               </p>
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
-                You're working toward becoming an amazing doctor 🩺, and I genuinely hope your journey is filled with success, happiness, peace, and all the dreams you're working so hard for.
+                Keep following your dreams and filling your journey with happiness, peace, and unforgettable moments. ✨
               </p>
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
-                May you always have reasons to smile, people who believe in you, and countless beautiful moments ahead.
+                May your days be filled with happiness, laughter, wonderful memories, and countless beautiful moments ahead.
               </p>
 
               <div className="celebration-divider my-7"/>
 
               <p className="text-center text-lg font-bold text-pink-500 sm:text-xl">
-                Happy Birthday, Ammu. 🎂❤️
+                Happy Birthday! 🎂❤️
               </p>
 
               <p className="mt-4 text-right text-base font-semibold text-gray-400 font-note">
@@ -332,14 +332,14 @@ export default function BirthdayCelebration() {
               <div className="relative overflow-hidden rounded-[2rem] border-4 border-white bg-white shadow-2xl shadow-pink-200/60">
 
                 <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || "/birthday-special"}/ammu-mahi.png`}
-                  alt="Ammu and Mahi"
+                  
+                  alt="Birthday memories"
                   className="celebration-photo block h-auto w-full object-cover"
                 />
 
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-5 pt-16">
                   <p className="text-sm font-semibold text-white sm:text-base">
-                    Healing lives with care • Building dreams with code
+                    Creating memories • Celebrating moments ✨
                   </p>
                 </div>
 
@@ -384,7 +384,7 @@ export default function BirthdayCelebration() {
 
             <h2 className="mt-6 text-3xl font-black sm:text-4xl md:text-5xl">
               <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Doctor + Engineer
+                Dreamer + Believer ✨
               </span>
             </h2>
 
@@ -437,7 +437,7 @@ export default function BirthdayCelebration() {
             >
 
               <span className="rounded-full bg-pink-50 px-4 py-2 text-pink-500">
-                🩺 Caring
+                 Caring
               </span>
 
               <span className="rounded-full bg-purple-50 px-4 py-2 text-purple-500">
@@ -503,12 +503,12 @@ export default function BirthdayCelebration() {
             </motion.div>
 
             <p className="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-pink-400">
-              One last little note
+              OOne last little note
             </p>
 
             <h2 className="mt-3 text-4xl font-black sm:text-5xl font-dreamy">
               <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-transparent">
-                That's all, Ammu...
+                That's all for now...
               </span>
             </h2>
 
@@ -530,15 +530,15 @@ export default function BirthdayCelebration() {
               <Sparkles className="mx-auto h-8 w-8 text-pink-400" />
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
-                I hope this little surprise gave you at least one smile today.
+                I hope this little surprise brings a smile to your face today.
               </p>
 
               <p className="mt-5 text-base leading-8 text-gray-500 sm:text-lg">
-                Keep chasing your dreams, keep believing in yourself, and keep becoming the amazing doctor you're meant to be. 🩺
+                Keep dreaming, keep believing, and keep making every moment count. ✨
               </p>
 
               <p className="mt-6 text-lg font-bold text-pink-500 sm:text-xl">
-                Happy Birthday once again, Ammu. 🎂❤️
+                Happy Birthday! 🎂❤️
               </p>
 
               <p className="mt-5 text-base font-semibold text-gray-400 font-note">
@@ -643,6 +643,12 @@ export default function BirthdayCelebration() {
     </div>
   )
 }
+
+
+
+
+
+
 
 
 
