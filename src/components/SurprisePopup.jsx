@@ -1,10 +1,9 @@
-﻿"use client"
+"use client"
 
 import { motion } from "framer-motion"
 import {
   Heart,
   Sparkles,
-  Stethoscope,
 } from "lucide-react"
 
 export default function SurprisePopup({ onOpen }) {
@@ -75,7 +74,7 @@ export default function SurprisePopup({ onOpen }) {
         </motion.div>
 
         <p className="font-dreamy text-4xl text-pink-400">
-          A little surprise for you... 🎁
+          A little surprise for you... ??
         </p>
 
         <motion.h1
@@ -88,7 +87,7 @@ export default function SurprisePopup({ onOpen }) {
             repeat: Infinity,
           }}
         >
-          A Special Surprise ❤️
+          A Special Surprise ??
         </motion.h1>
 
         <div className="mx-auto mt-3 h-px w-20 bg-gradient-to-r from-transparent via-pink-300 to-transparent" />
@@ -96,7 +95,7 @@ export default function SurprisePopup({ onOpen }) {
         <p className="font-lato mx-auto mt-6 max-w-xs text-base leading-7 text-gray-500 sm:text-lg">
           A little surprise has been created just for you.
           <br />
-          Something I hope brings a little smile to your face. ✨
+          Something I hope brings a little smile to your face. ?
         </p>
 
         <motion.button
@@ -118,7 +117,6 @@ export default function SurprisePopup({ onOpen }) {
             scale: 0.9,
           }}
         >
-          <Stethoscope className="h-11 w-11 sm:h-14 sm:w-14" />
         </motion.button>
 
         <motion.p
@@ -131,16 +129,20 @@ export default function SurprisePopup({ onOpen }) {
             repeat: Infinity,
           }}
         >
-          Open it... ❤️
+          Open it... ??
         </motion.p>
 
         <p className="font-lato mt-5 text-xs tracking-wide text-gray-400">
-          Made with a little bit of Mahi's heart. 💗
+          A little birthday magic just for you.
         </p>
 
       </motion.div>
     </motion.div>
   )
 }
+
+
+
+
 
 
