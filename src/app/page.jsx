@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -59,6 +59,13 @@ export default function Home() {
   }
 
   const startCelebration = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0
+      audioRef.current.play().catch((error) => {
+        console.log("Music playback error:", error)
+      })
+    }
+
     setShowForYouBtn(false)
     setIsBirthday(true)
     setShowBurst(true)
@@ -253,7 +260,7 @@ export default function Home() {
 
         <audio
           ref={audioRef}
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH || "/birthday-special"}/birthday.mp3`}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/birthday.mp3`}
           preload="auto"
           loop
         />

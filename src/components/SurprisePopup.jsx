@@ -117,6 +117,20 @@ export default function SurprisePopup({ onOpen }) {
             scale: 0.9,
           }}
         >
+          <motion.span
+            animate={{
+              y: [0, -8, 0],
+              rotate: [-4, 4, -4],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+            }}
+            className="block text-6xl select-none"
+          >
+            &#127873;
+          </motion.span>
         </motion.button>
 
         <motion.p
