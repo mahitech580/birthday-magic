@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import TypewriterText from "@/components/TypewriterText"
@@ -97,7 +97,7 @@ export default function BirthdayCelebration() {
                 }}
                 className="celebration-icon text-6xl sm:text-7xl"
               >
-                ??
+                🎂
               </motion.div>
 
               <motion.div
@@ -111,7 +111,7 @@ export default function BirthdayCelebration() {
                   repeat: Infinity,
                 }}
               >
-                ?
+                ✨
               </motion.div>
 
               <motion.div
@@ -125,7 +125,7 @@ export default function BirthdayCelebration() {
                   repeat: Infinity,
                 }}
               >
-                ??
+                💗
               </motion.div>
 
             </div>
@@ -136,35 +136,35 @@ export default function BirthdayCelebration() {
 
             <h1 className="celebration-title mt-3 px-2 text-4xl font-black leading-tight sm:text-5xl md:text-6xl font-dreamy">
               <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-transparent">
-                Happy Birthday! ????
+                Happy Birthday! 🎂❤️
               </span>
               <br />
               <span className="text-gray-800">
-                Happy Birthday! ????
+                Happy Birthday! 🎂❤️
               </span>
             </h1>
 
             <p className="mt-5 max-w-md text-base leading-7 text-gray-500 sm:text-lg">
-              Your Special Day ?
+              Your Special Day ✨
               <br />
-              A beautiful celebration for someone special. ??
+              A beautiful celebration for someone special. 💗
             </p>
 
             <div className="mt-7 flex items-center gap-4 text-2xl sm:gap-5 sm:text-3xl">
               <motion.span animate={{ y: [0, -6, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
-                
+                &#127880;
               </motion.span>
 
               <motion.span animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                ??
+                ❤️
               </motion.span>
 
               <motion.span animate={{ y: [0, -6, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-                ??
+                🎂
               </motion.span>
 
               <motion.span animate={{ scale: [1, 1.12, 1] }} transition={{ duration: 1.7, repeat: Infinity }}>
-                ??
+                💻
               </motion.span>
             </div>
 
@@ -226,7 +226,7 @@ export default function BirthdayCelebration() {
             </p>
 
             <h2 className="mt-2 text-3xl font-bold text-gray-800 sm:text-4xl font-dreamy">
-              To Someone Special ??
+              To Someone Special ❤️
             </h2>
 
             <motion.div
@@ -246,16 +246,16 @@ export default function BirthdayCelebration() {
 
               <TypewriterText
                 className="text-base leading-8 text-gray-600 sm:text-lg"
-                text="Today is your special day! Let this little corner of the internet make it even more memorable. ?"
+                text="Today is your special day! Let this little corner of the internet make it even more memorable. ✨"
                 speed={22}
               />
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
-                A little corner of the internet filled with wishes, memories, smiles, and plenty of birthday vibes. ?
+                A little corner of the internet filled with wishes, memories, smiles, and plenty of birthday vibes. ✨
               </p>
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
-                Keep following your dreams and filling your journey with happiness, peace, and unforgettable moments. ?
+                Keep following your dreams and filling your journey with happiness, peace, and unforgettable moments. ✨
               </p>
 
               <p className="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
@@ -265,11 +265,11 @@ export default function BirthdayCelebration() {
               <div className="celebration-divider my-7"/>
 
               <p className="text-center text-lg font-bold text-pink-500 sm:text-xl">
-                Happy Birthday! ????
+                Happy Birthday! 🎂❤️
               </p>
 
               <p className="mt-4 text-right text-base font-semibold text-gray-400 font-note">
-                � With love
+                — Someone Special
               </p>
 
             </motion.div>
@@ -284,19 +284,19 @@ export default function BirthdayCelebration() {
               }}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3.5 text-sm font-bold text-white shadow-xl sm:px-8 sm:py-4 sm:text-base"
             >
-              There's one more thing... ??
+              There's one more thing... 👀
               <ArrowRight className="h-5 w-5" />
             </motion.button>
 
           </motion.section>
         )}
 
-                {screen === 2 && (
+        {screen === 2 && (
           <motion.section
             key="memories"
             initial={{
               opacity: 0,
-              scale: 0.92,
+              scale: 0.9,
             }}
             animate={{
               opacity: 1,
@@ -309,74 +309,118 @@ export default function BirthdayCelebration() {
             transition={{
               duration: 0.8,
             }}
-            className="celebration-section relative z-10 flex min-h-[560px] flex-col items-center justify-center px-2 py-8 text-center"
+            className="celebration-section relative z-10 flex min-h-[560px] flex-col items-center px-2 py-7 text-center"
           >
-
-            <motion.div
-              animate={{
-                y: [0, -8, 0],
-                rotate: [-2, 2, -2],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
-              className="text-6xl sm:text-7xl"
-            >
-              ??
-            </motion.div>
-
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-pink-400">
-              A little birthday moment
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black sm:text-4xl md:text-5xl font-dreamy">
-              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-transparent">
-                Making memories ?
-              </span>
-            </h2>
-
-            <p className="mt-5 max-w-lg text-base leading-7 text-gray-600 sm:text-lg">
-              Every special day deserves a little extra happiness,
-              <br />
-              a few smiles, and beautiful memories to keep forever. ??
-            </p>
 
             <motion.div
               initial={{
                 opacity: 0,
-                y: 20,
+                y: 25,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
               }}
               transition={{
-                delay: 0.4,
+                duration: 0.8,
               }}
-              className="celebration-card mt-7 w-full max-w-lg rounded-[2rem] border border-white/80 bg-white/75 p-6 shadow-xl backdrop-blur-md sm:p-8"
+              className="w-full max-w-2xl"
             >
 
-              <div className="flex justify-center gap-4 text-3xl">
-                <span>??</span>
-                <span>?</span>
-                <span>??</span>
-                <span>??</span>
+              <div className="relative overflow-hidden rounded-[2rem] border-4 border-white bg-white shadow-2xl shadow-pink-200/60">
+
+                <img
+                  
+                  alt="Birthday memories"
+                  className="celebration-photo block h-auto w-full object-cover"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-5 pt-16">
+                  <p className="text-sm font-semibold text-white sm:text-base">
+                    Creating memories • Celebrating moments ✨
+                  </p>
+                </div>
+
               </div>
 
-              <p className="mt-5 text-lg font-bold text-pink-500 sm:text-xl">
-                Here's to another beautiful year! ??
+            </motion.div>
+
+            <div className="mt-6 flex items-center gap-4">
+
+              <motion.div
+                animate={{
+                  y: [0, -7, 0],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                }}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-pink-100 shadow-md sm:h-16 sm:w-16"
+              >
+              </motion.div>
+
+              <div className="text-lg font-bold text-pink-400">
+                +
+              </div>
+
+              <motion.div
+                animate={{
+                  y: [0, -7, 0],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  delay: 0.25,
+                }}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-purple-100 shadow-md sm:h-16 sm:w-16"
+              >
+              </motion.div>
+
+            </div>
+
+            <h2 className="mt-6 text-3xl font-black sm:text-4xl md:text-5xl">
+              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+                A Beautiful Journey ? ✨
+              </span>
+            </h2>
+
+            <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
+              Keep shining and making beautiful moments.
+              <br />
+              He knows how to build.
+            </p>
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.5,
+              }}
+              className="celebration-card mt-5 w-full max-w-lg rounded-3xl border border-pink-100 bg-white/75 p-5 shadow-lg backdrop-blur-md sm:p-6"
+            >
+
+              <div className="flex justify-center">
+                <Stars className="h-7 w-7 text-pink-400" />
+              </div>
+
+              <p className="mt-3 text-xl font-bold text-pink-500 sm:text-2xl">
+                Maybe the best memories? 😉❤️
               </p>
 
-              <p className="mt-3 text-sm leading-6 text-gray-500 sm:text-base">
-                May this year bring happiness, laughter, new adventures,
-                and countless moments worth remembering.
+              <p className="mt-3 text-sm italic text-gray-400 sm:text-base">
+                Just saying... 😌
               </p>
 
             </motion.div>
 
             <motion.div
-              className="mt-6 flex flex-wrap justify-center gap-2 text-xs font-semibold sm:text-sm"
+              className="mt-5 flex flex-wrap justify-center gap-2 text-xs font-semibold sm:text-sm"
               initial={{
                 opacity: 0,
               }}
@@ -384,20 +428,20 @@ export default function BirthdayCelebration() {
                 opacity: 1,
               }}
               transition={{
-                delay: 0.7,
+                delay: 0.8,
               }}
             >
 
               <span className="rounded-full bg-pink-50 px-4 py-2 text-pink-500">
-                ?? Happiness
+                 Kindness
               </span>
 
               <span className="rounded-full bg-purple-50 px-4 py-2 text-purple-500">
-                ? Dreams
+                💻 Creating
               </span>
 
               <span className="rounded-full bg-rose-50 px-4 py-2 text-rose-500">
-                ?? Memories
+                ❤️ Smiles
               </span>
 
             </motion.div>
@@ -410,14 +454,15 @@ export default function BirthdayCelebration() {
               whileTap={{
                 scale: 0.96,
               }}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3.5 text-sm font-bold text-white shadow-xl sm:px-8 sm:py-4 sm:text-base"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-pink-500 shadow-lg ring-1 ring-pink-200 sm:px-8 sm:py-4 sm:text-base"
             >
-              A few more wishes ??
+              One last message 🌸
               <ArrowRight className="h-5 w-5" />
             </motion.button>
 
           </motion.section>
         )}
+
         {screen === 5 && (
           <motion.section
             key="final"
@@ -450,7 +495,7 @@ export default function BirthdayCelebration() {
               }}
               className="celebration-icon text-6xl sm:text-7xl"
             >
-              ??
+              🌸
             </motion.div>
 
             <p className="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-pink-400">
@@ -485,15 +530,15 @@ export default function BirthdayCelebration() {
               </p>
 
               <p className="mt-5 text-base leading-8 text-gray-500 sm:text-lg">
-                Keep dreaming, keep believing, and keep making every moment count. ?
+                Keep dreaming, keep believing, and keep making every moment count. ✨
               </p>
 
               <p className="mt-6 text-lg font-bold text-pink-500 sm:text-xl">
-                Happy Birthday! ????
+                Happy Birthday! 🎂❤️
               </p>
 
               <p className="mt-5 text-base font-semibold text-gray-400 font-note">
-                � With love
+                — Someone Special
               </p>
 
             </motion.div>
@@ -594,9 +639,6 @@ export default function BirthdayCelebration() {
     </div>
   )
 }
-
-
-
 
 
 
